@@ -3,6 +3,6 @@
 :set ruler
 :set autoindent
 :set cursorline
-:colo darkblue
+:colo koehler
 :syntax on
 
