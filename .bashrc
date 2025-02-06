@@ -11,4 +11,6 @@ alias vim='nvim'
 
 PS1='[\u@\h \W]\$ '
 
+export WINHOME="/mnt/c/Users/anelena/"
+
 eval "$(starship init bash)"

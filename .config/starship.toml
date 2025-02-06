@@ -21,14 +21,14 @@ $haskell\
 $python\
 $lua\
 [](fg:color_grad3 bg:color_bg1)\
-$docker_context\
-$conda\
+$cmd_duration\
 [](fg:color_bg1 bg:color_bg0)\
-$time\
+${custom.clocktime}\
 [ ](fg:color_bg0)\
 $line_break$character"""
 
-palette = 'gruvbox_dark'
+sss = '~/.config/starshipscripts/'
+palette = 'custom'
 
 #ash colors 1 (gotten through okLCH python script)
 #00b3d0
@@ -50,7 +50,7 @@ palette = 'gruvbox_dark'
 #1685e9
 #5e5adc
 
-[palettes.gruvbox_dark]
+[palettes.custom]
 color_fg0 = '#fbf1c7'
 color_bg0 = '#3c3836'
 color_bg1 = '#665c54'
@@ -170,20 +170,17 @@ symbol = ""
 style = "bg:color_grad3"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_grad3)]($style)'
 
-[docker_context]
-symbol = ""
+[cmd_duration]
+show_milliseconds = true
 style = "bg:color_bg1"
-format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg1)]($style)'
-
-[conda]
-style = "bg:color_bg1"
-format = '[[ $symbol( $environment) ](fg:#83a598 bg:color_bg1)]($style)'
+format= '[[  $duration](fg:color_fg0 bg:color_bg1)]($style)'
 
 [time]
 disabled = false
-time_format = "%R"
+time_format = "%H:%M %P"
 style = "bg:color_bg0"
 format = '[[  $time ](fg:color_fg0 bg:color_bg0)]($style)'
+time_range = '00:00:00-11:32:00'
 
 [line_break]
 disabled = false
@@ -196,3 +193,14 @@ vimcmd_symbol = '[  ](bold fg:color_green)'
 vimcmd_replace_one_symbol = '[  ](bold fg:color_purple)'
 vimcmd_replace_symbol = '[  ](bold fg:color_purple)'
 vimcmd_visual_symbol = '[  ](bold fg:color_yellow)'
+
+#[custom.linhome]
+#symbol = " "
+#when = '''test "$HOME" = "$PWD"'''
+#format = '[$symbol]($style)'
+
+[custom.clocktime]
+command = '~/.config/starshipscripts/clocktime.sh'
+when = true
+style = "bg:color_bg0"
+format = '[[($output)](fg:color_fg0 bg:color_bg0)]($style)'
