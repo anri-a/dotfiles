@@ -27,7 +27,6 @@ ${custom.clocktime}\
 [ ](fg:color_bg0)\
 $line_break$character"""
 
-sss = '~/.config/starshipscripts/'
 palette = 'custom'
 
 #ash colors 1 (gotten through okLCH python script)
