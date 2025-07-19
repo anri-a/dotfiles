@@ -12,7 +12,9 @@ alias vim='nvim'
 
 gitcamp() {
   git add .;
-  git commit -m $1; #&& 
+  local msg=${@:1};
+  echo message: $msg;
+  git commit -m "$msg";
   git push;
 }
 
